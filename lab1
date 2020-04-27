@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class lab1{
+    public static void main(String[] args) {
+        boolean checkQuals = false;
+        string Pts;
+        string PtsArray;
+        System.out.println("BBedite koopdinati xxx");
+        Scanner input = new Scanner(System.in);
+
+        //реализация ввода точек
+        Pts = input.nextLine();
+        PtsArray = Pts.split("");
+        Point3d myFirstPoint = new Point3d(Double.parseDouble(PtsArray[0]), Double.parseDouble(PtsArray[1]), Double.parsDouble(PtsArray[2]));
+
+
+        Pts = input.nextLine();
+        PtsArray = Pts.split("");
+        Point3d mySecondPoint = new Point3d(Double.parseDouble(PtsArray[0]), Double.parseDouble(PtsArray[1]), Double.parsDouble(PtsArray[2]));
+
+        Pts = input.nextLine();
+        PtsArray = Pts.split("");
+        Point3d myThirdPoint = new Point3d(Double.parseDouble(PtsArray[0]), Double.parseDouble(PtsArray[1]), Double.parsDouble(PtsArray[2]));
+    }
+
+    if (myFirstPoint.equals(MySecondPoint)|| myFirstPoint.equals(MyThirdPoint)||mySecondPoint.equals(MyThirdPoint)){
+        checkOut = true;
+        System.out.println("To4ku paBHu dpy7-dpy7y");
+    }
+    else{
+        checkOut = false;
+    }
+    if (checkOut == false){
+        double sTriangle = (computeArea(MyFirstPoint,MySecondPoint,MyThirdPoint));
+        System.out.println("||J|owaD Tpey7oJ|Huka: %.2f",sTriangle);
+
+    }
+
+    public static double computeArea(Object obj1, Object obj2, Object obj3){
+        Point3d o1 = (Point3d) obj1;
+        Point3d o2 = (Point3d) obj2;
+        Point3d o3 = (Point3d) obj3;
+
+        double a = o1.distanceTo(o2);
+        double b = o2.distanceTo(o3);
+        double c = o3.distanceTo(o1);
+
+        double p = (a+b+c)/2;
+        double s = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+
+        return s;
+    }
+
+}
